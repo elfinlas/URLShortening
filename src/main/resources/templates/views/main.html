@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/default">
+
+<!--/* Custom CSS 추가 영역 */-->
+<th:block layout:fragment="custom_css">
+
+    <!--- Test Only -->
+    <!--/* Semantic-UI Input */-->
+    <link rel="stylesheet" th:href="@{/webjars/Semantic-UI/2.4.1/components/input.min.css}">
+
+    <!--/* Semantic-UI dropdown */-->
+    <link rel="stylesheet" th:href="@{/webjars/Semantic-UI/2.4.1/components/dropdown.min.css}">
+
+</th:block>
+
+<!--/* 메인 컨텐츠 부분 */-->
+<th:block layout:fragment="content_body">
+
+    <h1 style="text-align: center; margin-top: 50px;"> KakaoPay pretest [Shortening] </h1>
+
+    <div class="ui email alternate stripe vertical " style="margin-top: 20px;">
+        <div class="ui center aligned grid container">
+            <div class="column">
+                <h3 class="ui header">
+                    긴 Url을 아래에 입력하면 짧은 URL로 반환해줍니다.
+                </h3>
+
+                <div class="ui big labeled input" style="margin-top: 30px;">
+                    <div class="ui dropdown label">
+                        <div class="text" id="httpType">http://</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <div class="item">http://</div>
+                            <div class="item">https://</div>
+                        </div>
+                    </div>
+                    <div class="ui action input">
+                        <input type="url" id="inputUserUrl" placeholder="Input url" style="width: 400px;">
+                        <button class="ui button" onclick="click4Change()">Convert</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--/* Divider */-->
+    <h4 class="ui horizontal divider header" style="margin-top: 40px;">
+        <i class="angle double down icon"></i>
+        &nbsp;&nbsp;Convert&nbsp;&nbsp;
+        <i class="angle double down icon"></i>
+    </h4>
+
+
+    <!--/* Convert result */-->
+    <div class="ui one column stackable center aligned page grid" style="margin-top: 30px;">
+        <div class="column twelve wide">
+
+            <div class="field">
+                <div class="ui pointing below red basic large label">
+                    Convert url
+                </div>
+            </div>
+
+            <div class="field" style="margin-top: 20px;">
+                <!--/* 응답 결과가 들어가는 요소 */-->
+                <div class="ui blue basic big label hidden" id="convertUrlInput">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</th:block>
+
+
+<!--/* Custom JS */-->
+<th:block layout:fragment="custom_js">
+
+    <!--/* Semantic dropdown */-->
+    <script th:src="@{/webjars/Semantic-UI/2.4.1/components/dropdown.min.js}"></script>
+
+    <!--/* 화면 JS */-->
+    <script th:src="${'/static/js/main.js?'}+${#calendars.format(#calendars.createNow(),'yyyyMMddHHmmss')}"></script>
+</th:block>
+
+</html>

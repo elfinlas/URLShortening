@@ -1,0 +1,20 @@
+<!--/* JS 영역 */-->
+
+<!--/* jQuery 영역 */-->
+<script th:src="@{/webjars/jquery/3.4.1/dist/jquery.min.js}"></script>
+
+<!--/* jQuery UI  */-->
+<script th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+
+<!--/* Semantic 영역 */-->
+<script th:src="@{/webjars/Semantic-UI/2.4.1/semantic.min.js}"></script>
+
+<!--/* SweetAlert 영역 */-->
+<script th:src="@{/webjars/sweetalert2/9.4.0/dist/sweetalert2.min.js}"></script>
+
+<!--/* Loading */-->
+<script th:src="${'/static/js/loading.js?'}+${#calendars.format(#calendars.createNow(),'yyyyMMddHHmmss')}"></script>
+
+
+<!--/* Common js */-->
+<script th:src="${'/static/js/common_util.js?'}+${#calendars.format(#calendars.createNow(),'yyyyMMddHHmmss')}"></script>

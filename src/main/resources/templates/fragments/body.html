@@ -1,0 +1,33 @@
+<!--/* Fragments 영역 [Body 부분] */-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<!--/* Fragments 영역 [Body 부분] */-->
+<body th:fragment="bodyFragment">
+
+<!--/* Loading */-->
+<div id="mask" hidden>
+    <div class="loader">
+        <div class="loadingfont">LOADING</div>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<!--/* 화면 클릭 시 해제 시킴 */-->
+<div class="window">  <input type="hidden" class="close" />  </div>
+
+
+<!--/* 메인 컨텐츠 부분 */-->
+<th:block layout:fragment="content_body"></th:block>
+
+
+<!--/* JS 영역 */-->
+<!--/* 공통 영역 */-->
+<div th:replace="fragments/bottom"></div>
+
+<!--/* Custom JS */-->
+<th:block layout:fragment="custom_js"></th:block>
+
+</body>
+</html>

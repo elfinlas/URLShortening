@@ -1,0 +1,26 @@
+<!--/* Fragments 영역 [Head 부분] */-->
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<!--/* 공통 Head 영역 */-->
+<head th:fragment="headFragment">
+    <meta charset="utf-8">
+    <title>KakaoPay pretest</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--/* 공통 CSS 영역 */-->
+    <!--/* Loading css  */-->
+    <link rel="stylesheet" th:href="@{/static/css/loading.css}" />
+
+    <!--/* Semantic-UI */-->
+    <link rel="stylesheet" th:href="@{/webjars/Semantic-UI/2.4.1/semantic.min.css}">
+
+    <!--/* SweetAlert 영역 */-->
+    <link rel="stylesheet" th:href="@{/webjars/sweetalert2/9.4.0/dist/sweetalert2.min.css}">
+
+    <!--/* Custom CSS */-->
+    <th:block layout:fragment="custom_css"></th:block>
+
+</head>
+</html>
