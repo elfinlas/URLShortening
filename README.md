@@ -29,6 +29,11 @@
 * Database
     * H2
 
+### 프로젝트 구현 방법
+* Java8과 Spring boot를 활용하여 프로젝트 구현.
+* 화면의 경우 Thymeleaf와 Semantic-UI, Ajax를 통해 구현.
+* 테스트 코드의 경우 코드 자체 기능이 간단하여 Short url 구현하는 서비스 코드에 대한 테스트 로직만 작성.
+
 ---
 
 ## 진행 시 문제점(고민) 및 해결 방안
@@ -53,7 +58,7 @@
     * 그래서 결론적으로는 **http://localhost:8080/X7wBSB** 라는 단축 URL이 완성된다. 
 
 3. localhost/{shortKey}를 전달 시 메인 URL과 함께 겹치는 문제점
-    * favicon 이미지 등 정적 리소스를 메인 URL에서 찾을 때 Short url을 호출하는 포인트와 동일하여 [커스지텀 예외](https://github.com/elfinlas/URLShortening/blob/master/src/main/java/com/kakaopay/shortening/shorturl/exceptions/ShortKeyNotFoundException.java)가 발생한다.
+    * favicon 이미지 등 정적 리소스를 메인 URL에서 찾을 때 Short url을 호출하는 포인트와 동일하여 [커스텀 예외](https://github.com/elfinlas/URLShortening/blob/master/src/main/java/com/kakaopay/shortening/shorturl/exceptions/ShortKeyNotFoundException.java)가 발생한다.
     * 이를 막기 위해서 해당 컨트롤러를 처리하는 메서드에서 특수문자가 들어간 값이 온 경우 메인 페이지, 그 외에는 Short url로 리다이렉션 처리 하는 방식으로 구현하였다. 
 
 4. Short url history
