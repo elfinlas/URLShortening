@@ -48,14 +48,6 @@ public class ShortUrlServiceTest {
     }
 
 
-    @DisplayName("Short URL 등록 확인 테스트(H2 DB 테스트 불가)")
-    @Test
-    void Short_URL_확인_테스트() {
-        ShortUrlDto.ShortUrlData dto = shortUrlService.getData4ShortUrlKey(makeShortUrl().getData().getShortUrlKey());
-        Assertions.assertNotNull(dto);
-        log.info("dto = " + dto);
-    }
-
     /**
      * Short Url 생성 메서드
      * @return
